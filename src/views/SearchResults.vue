@@ -113,4 +113,10 @@ h1 span {
 .icon {
   color: transparent;
 }
+@media screen and (max-width: 768px)  {
+  h1 {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }}
 </style>

@@ -8,7 +8,6 @@
 * {
   margin: 0;
   padding: 0;
-  
 }
 
 small {
@@ -147,7 +146,26 @@ small {
   padding-top: 210px;
 }
 
+@media screen and (max-width: 1000px)  {
+  .input-field {
+ 
+  width: 500px;
+ 
+}
+  .icon {
+    padding: 13px 10px 10px 10px;
+    min-width: 40px;
+    margin-left: 20%;
+    font-size: 12px;
+    opacity: 0;
+  }}
+
 @media screen and (max-width: 600px) {
+  h1 {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
   .column {
     flex: 100%;
     max-width: 100%;
@@ -157,8 +175,9 @@ small {
     min-width: 40px;
     margin-left: 20%;
     font-size: 12px;
-    color: #d1d1d1;
+    opacity: 0;
   }
+
   .input-field {
     margin: 0 auto;
     padding: 12px 12px 12px 50px;
@@ -168,6 +187,13 @@ small {
     justify-content: center;
     border-radius: 4px;
     box-shadow: black;
+  }
+  .column .index-1,
+  .column .index-2,
+  .column .index-3,
+  .column .index-4,
+  .column .index-5 {
+    margin-top: 3rem;
   }
 }
 </style>
