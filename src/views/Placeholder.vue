@@ -1,9 +1,7 @@
 <template>
   <div>
     <div class="top-half">
-      <h1 v-if="search">
-        Searched Results <span>Loading...</span>
-      </h1>
+      <h1 v-if="search">Searched Results <span>Loading...</span></h1>
       <div class="input-wrapper" v-if="!search">
         <div class="input-icons">
           <i class="fa fa-search icon"></i>
@@ -90,7 +88,7 @@ export default {
 h1 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    padding-top: 80px;
+  padding-top: 80px;
   margin: 0 auto 0 -340px;
   display: flex;
   justify-content: center;
@@ -141,5 +139,12 @@ h1 span {
 
 .placeholder-text4 {
   opacity: 0;
+}
+@media screen and (max-width: 768px) {
+  h1 {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
 }
 </style>
