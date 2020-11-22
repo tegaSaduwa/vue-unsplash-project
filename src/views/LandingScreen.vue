@@ -15,15 +15,17 @@
           />
         </div>
       </div>
-     
+
       <div class="row">
         <div
-        @click="redirect()"
           v-bind:key="photo.id"
           v-for="(photo, index) in photos"
           class="column"
         >
           <div
+            @click="
+              modal(photo.urls.regular, photo.user.name, photo.user.location)
+            "
             class="img"
             :class="[`index-${index}`]"
             v-bind:style="{
@@ -88,14 +90,22 @@ export default {
       this.getPhoto(this.search);
       this.$router.push(`/search/${this.search}`);
     },
-    redirect () {
-        // this.$router.push(`/search/info/${id}`); 
-        console.log("hello");
-    }
+    modal(pic, name, location) {
+      console.log(pic);
+      this.$swal({
+        title: name,
+        text: location,
+        imageUrl: pic,
+        imageWidth: 600,
+        imageHeight: 300,
+        imageAlt: "Custom image",
+        cancelButtonColor: "secondary",
+        confirmButtonText: "Close",
+        // background:" rgba(0, 0, 0, 0.4)",
+      });
+    },
   },
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

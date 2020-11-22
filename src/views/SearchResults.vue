@@ -24,6 +24,9 @@
             v-bind:style="{
               backgroundImage: `url(${photo.urls.regular})`,
             }"
+            @click="
+              modal1(photo.urls.regular, photo.user.name, photo.user.location)
+            "
           >
             <div :class="[`placeholder-text${index}`]">
               <p>{{ photo.user.name }}</p>
@@ -76,6 +79,20 @@ export default {
           console.log(e);
         });
     },
+    modal1(pic, name, location) {
+      console.log(pic);
+      this.$swal({
+        title: name,
+        text: location,
+        imageUrl: pic,
+        imageWidth: 600,
+        imageHeight: 300,
+        imageAlt: "Custom image",
+        cancelButtonColor: "#e8e8e8",
+        confirmButtonText: "Close",
+        // background:" rgba(0, 0, 0, 0.4)",
+      });
+    },
   },
 };
 </script>
@@ -83,7 +100,7 @@ export default {
 <style scoped>
 h1 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
- Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0 auto 0 -340px;
   display: flex;
   justify-content: center;
@@ -93,8 +110,7 @@ h1 span {
   opacity: 0.5;
   padding-left: 6px;
 }
-  .icon {
-    
-    color: transparent;
-  }
+.icon {
+  color: transparent;
+}
 </style>
