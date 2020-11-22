@@ -83,8 +83,8 @@ export default {
 <style scoped>
 h1 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  margin: 0 auto;
+ Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0 auto 0 -340px;
   display: flex;
   justify-content: center;
   color: rgb(40, 40, 121);
@@ -93,4 +93,8 @@ h1 span {
   opacity: 0.5;
   padding-left: 6px;
 }
+  .icon {
+    
+    color: transparent;
+  }
 </style>
