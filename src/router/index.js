@@ -2,6 +2,8 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import LandingScreen from "../views/LandingScreen.vue";
 import SearchResults from "../views/SearchResults.vue";
+// import Placeholder from "../views/Placeholder.vue";
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -16,6 +18,12 @@ const routes = [
     component: SearchResults,
     props: true,
   },
+  // {
+  //   path: "/placeh",
+  //   name: "Placeholder",
+  //   component: Placeholder,
+  //   props: true,
+  // },
 ];
 
 const router = new VueRouter({

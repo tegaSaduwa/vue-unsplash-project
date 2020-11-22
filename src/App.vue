@@ -146,19 +146,28 @@ small {
   padding-top: 210px;
 }
 
-@media screen and (max-width: 1000px)  {
-  .input-field {
- 
-  width: 500px;
- 
-}
+@media screen and (max-width: 1100px) {
   .icon {
     padding: 13px 10px 10px 10px;
     min-width: 40px;
     margin-left: 20%;
     font-size: 12px;
     opacity: 0;
-  }}
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .input-field {
+    width: 500px;
+  }
+  .icon {
+    padding: 13px 10px 10px 10px;
+    min-width: 40px;
+    margin-left: 20%;
+    font-size: 12px;
+    opacity: 0;
+  }
+}
 
 @media screen and (max-width: 600px) {
   h1 {

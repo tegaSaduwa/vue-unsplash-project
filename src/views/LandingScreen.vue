@@ -1,11 +1,12 @@
 <template>
   <div>
-    <div class="top-half" v-if="this.photos">
+    <Placeholder v-if="loading" />
+
+    <div class="top-half" v-if="!loading">
       <div class="input-wrapper">
         <div class="input-icons">
           <i class="fa fa-search icon"></i>
           <input
-            v-if="this.searchAction === false"
             type="text"
             name="title"
             class="input-field"
@@ -48,7 +49,9 @@
 
 <script>
 import axios from "axios";
+import Placeholder from "./Placeholder.vue";
 export default {
+  components: { Placeholder },
   name: "LandingScreen",
 
   data() {
@@ -108,5 +111,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

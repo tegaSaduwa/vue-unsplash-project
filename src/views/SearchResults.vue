@@ -1,10 +1,12 @@
 <template>
   <div>
-    <div class="top-half">
+    <Placeholder v-if="loading" v-bind:search=" this.$route.params.placeholder" />
+    <div class="top-half" v-if="!loading">
       <div class="input-wrapper">
         <div class="input-icons">
           <i class="fa fa-search icon"></i>
-          <h1>
+          
+          <h1 v-if="!loading">
             Search Results for
             <span> "{{ this.$route.params.placeholder }}"</span>
           </h1>
@@ -44,15 +46,18 @@
 
 <script>
 import axios from "axios";
+import Placeholder from "./Placeholder.vue";
 export default {
+ 
   name: "SearchResults",
+   components: { Placeholder },
   props: ["placeholder"],
 
   data() {
     return {
       photos: [],
       search: "",
-      searchAction: false,
+      loading: true,
     };
   },
   created() {
@@ -74,6 +79,7 @@ export default {
         .then((response) => {
           console.log(response.data.results);
           this.photos = response.data.results;
+          this.loading = false;
         })
         .catch((e) => {
           console.log(e);
